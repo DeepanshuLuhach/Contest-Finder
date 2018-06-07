@@ -17,23 +17,11 @@
     	{
         	background: transparent;
 	    }
-	    .top-nav-collapse
-	    {
-	        background: #4285F4;
-	    }
-	    @media only screen and (max-width: 768px)
-	    {
-        	.navbar 
-        	{
-            	background: #4285F4;
-                opacity: 1;
-        	}
-    	}
-		.view 
-		{
-		    background: url("img/macbook-apple-imac-computer-39284.jpeg")center fixed;
-		    background-size: cover;
-		}
+	.view 
+	{
+	    background: url("img/macbook-apple-imac-computer-39284.jpeg")center fixed;
+	    background-size: cover;
+	}
     </style>
 
 </head>
@@ -43,34 +31,32 @@
     <!-- Start your project here-->
 
     <header>
-    	<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-    		<button class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#togg"> <span class="fa fa-bars"> </span> </button>
-    		<div class="container">
-    			<div class="collapse navbar-toggleable-xs" id="togg">
-    				<a class="navbar-brand" href="index.php" style="font-size"> Contest Finder </a>
-    				<ul class="nav navbar-nav">
-    					<li class="nav-item">
-    						<a class="nav-link" href="up.php"> Upcoming Contests </a>
-    					</li>
+    	<nav class="navbar navbar-dark navbar-fixed-top">
+    	<div class="container">
+    		<div class="collapse navbar-toggleable-xs" id="togg">
+    			<a class="navbar-brand" href="index.php" style="font-size"> Contest Finder </a>
+    			<ul class="nav navbar-nav">
+    			<li class="nav-item">
+   				<a class="nav-link" href="up.php"> Upcoming Contests </a>
+    			</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="on.php"> Onging Contests </a>
+                            <a class="nav-link" href="on.php"> Live Contests </a>
                         </li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="about.php"> About Me </a>
-    					</li>
-    					
-    				</ul>
-    			</div>
+    			<li class="nav-item">
+    				<a class="nav-link" href="about.php"> About Me </a>
+    			</li>			
+    			</ul>
     		</div>
+    	</div>
     	</nav>
     	
     </header>
     <div class="view hm-black-strong" style="height: 100vh; color: #fff;">
 	    	<div class="full-bg-img flex-center">
-	            <h1 class="animated fadeInUp display-1"> Never miss a Contest </h1>
+	            <h1 class="display-1"> Never miss a Contest </h1>
 	    	</div>
         <div class="container-fluid" style="height: 100vh;">
-        <p style="margin-top: 600px; color: $fff; text-align: center;">&copy; DragonFist</p>
+        <p style="margin-top: 600px; color: black; text-align: left; font-size:150%">&copy; DragonFist</p>
         </div>
     </div>
         

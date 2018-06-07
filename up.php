@@ -54,7 +54,7 @@ error_reporting(0);
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title> Contest Finder </title>
@@ -65,23 +65,9 @@ error_reporting(0);
     <style type="text/css">
     	.navbar 
     	{
-        	background: transparent;
+        	background: #000000;
         	opacity: 1;
-            color:black;
-	    }
-	    .top-nav-collapse
-	    {
-	        background: #0066ff;
-            opacity: 1;
-	    }
-	    @media only screen and (max-width: 768px)
-	    {
-        	.navbar 
-        	{
-            	background: #0066ff;
-                opacity: 1;
-                color:black;
-        	}
+            color: white;
     	}
         .view 
 		{
@@ -111,14 +97,13 @@ error_reporting(0);
             border: 1px solid #029c0b;
             color: #000000;
             -webkit-box-shadow: 0 6px 6px -6px #0E1119;
-	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
-	        box-shadow: 0 6px 6px -6px #0E1119;
-    transform: translate3d(2px, -2px, 0);
-  
-  transition-delay: 0s;
-	  transition-duration: 0.6s;
-	  transition-property: all;
-  transition-timing-function: line;
+            -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+            transform: translate3d(2px, -2px, 0);
+            transition-delay: 0s;
+            transition-duration: 0.6s;
+            transition-property: all;
+            transition-timing-function: line;
 
         }
 
@@ -137,42 +122,43 @@ error_reporting(0);
     <!-- Start your project here-->
 
     <header>
-    	<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-    		<button class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#togg"> <span class="fa fa-bars"> </span> </button>
+    	<nav class="navbar navbar-dark">
     		<div class="container">
-    			<div class="collapse navbar-toggleable-xs" id="togg">
     				<a class="navbar-brand" href="index.php" style=" font-size:150%"> Contest Finder </a>
     				<ul class="nav navbar-nav" >
     					<li class="nav-item">
                             <a class="nav-link" href="up.php"style="font-size:120%" > Upcoming Contests </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="on.php"style="font-size:120%"> Ongoing Contests </a>
+                            <a class="nav-link" href="on.php"style="font-size:120%"> Live Contests </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.php" style="font-size:120%"> About Me </a>
     				</ul>
-    			</div>
     		</div>
     	</nav>
         
     </header>
     <div class="view hm-black-slight">
         <div class="full-bg-img flex-center">
-	            <h1 class="animated fadeInUp display-1" style="color:white;"> Scheduled Contests </h1>
+	            <h1 class="display-1" style="color:white;"> Scheduled Contests </h1>
 	    	</div>
     </div>
     <div style="background-color: #fff;">
-        <div style="color:#fff; margin-bottom:20px;">ghjkl</div>
     <?php
         $i=0;
         for(;$i<count($obj['result']['upcoming']);$i++)
         {
             if(mtime($obj['result']['upcoming'][$i]['StartTime'])>=mtime($obj['result']['timestamp']))
             {   
-                 echo " <a href='{$obj['result']['upcoming'][$i]['url']}' target='_blank'>
-                        <div class='entry'>
-                        <div class='row'>
+                if($obj['result']['upcoming'][$i]['Platform']=='CODEFORCES')//fixed url for codeforces
+                {
+                    $obj['result']['upcoming'][$i]['url'] = str_replace('contest', 'contests', $obj['result']['upcoming'][$i]['url']);
+                    echo $url;
+                }
+                 echo " <div class='entry'>
+                        <a href='{$obj['result']['upcoming'][$i]['url']}' target='_blank' >
+                        <div class='row' style='color:#000;'>
                             <div class='col-md-4'>
                             <p >";
                             image($obj['result']['upcoming'][$i]['Platform']);
@@ -205,9 +191,9 @@ error_reporting(0);
         }
     ?>
     </div>
-    <div >
+<!--    <div >
         <div style="color:#000000; margin-bottom:10px;  margin-top:10px; text-align:center; font-size:20px;"><p>&copy; DragonFist</p></div>
-    </div>
+    </div> -->
 
 </body>
 

@@ -44,9 +44,8 @@ content {
       color: #f5f6f7;
   }
   p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
   .bg-1 { 
-      background-color: #1abc9c; /* Green */
+      background-color: #000000 ; /* #1abc9c Green */
       color: #ffffff;
   }
   .bg-2 { 
@@ -66,10 +65,10 @@ content {
       padding-bottom: 70px;
   }
 .view 
-		{
-		    background: url("img/bk.jpg")center fixed;
-		    background-size: cover;
-		}
+{
+	background-color : #000000;
+	background-size: cover;
+}
     </style>
 
 </head>
@@ -79,22 +78,19 @@ content {
     <!-- Start your project here-->
 
     <header>
-    	<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-    		<button class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#togg"> <span class="fa fa-bars"> </span> </button>
+    	<nav class="navbar navbar-dark navbar-fixed-top">
     		<div class="container">
-    			<div class="collapse navbar-toggleable-xs" id="togg">
-    				<a class="navbar-brand" href="index.php" style=" font-size:150%"> Contest Finder </a>
-    				<ul class="nav navbar-nav" >
-    					<li class="nav-item">
+    			<a class="navbar-brand" href="index.php" style=" font-size:150%"> Contest Finder </a>
+    			<ul class="nav navbar-nav" >
+    			<li class="nav-item">
                             <a class="nav-link" href="up.php"style="font-size:120%" > Upcoming Contests </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="on.php"style="font-size:120%"> Ongoing Contests </a>
+                            <a class="nav-link" href="on.php"style="font-size:120%"> Live Contests </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.php" style="font-size:120%"> About Me </a>
     				</ul>
-    			</div>
     		</div>
     	</nav>
         
@@ -103,16 +99,16 @@ content {
 
     <div class="content">
     
- <div class="view bg-1 text-center" style="margin-top:7vh;">
+ <div class="container-fluid bg-1 text-center" >
   <h3 class="margin"><br><br>Who Am I?</h3>
   <img src="img/me.jpg" class="img-responsive img-circle margin" style="display:inline" alt="DragonFist" width="50%" height="50%">
-  <h3>I'm an adventurer. The one in the middle.</h3>
+  <h3>I'm an engineer. The one in the middle.</h3>
 </div>
 
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center" >
   <h3 class="margin">What Am I?</h3>
-    <p> I am a Second Year IT student from Army Institute of Technology, Pune, India.<br> Also known by name <a href="http://codeforces.com/profile/DragonFist" target="_blank" style="color:cyan;">DragonFist</a> on Codeforces. </p>
+    <p> I am a Third Year IT student from Army Institute of Technology, Pune, India.<br> Also known by name <a href="http://codeforces.com/profile/DragonFist" target="_blank" style="color:cyan;">DragonFist</a> on Codeforces. </p>
 </div>
 
 <!-- Third Container (Grid) -->

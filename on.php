@@ -68,24 +68,10 @@ error_reporting(0);
     <style type="text/css">
     	.navbar 
     	{
-        	background: transparent;
+        	background: #000000;
         	opacity: 1;
-            color:black;
-	    }
-	    .top-nav-collapse
-	    {
-	        background: #0066ff;
-            opacity: 1;
-	    }
-	    @media only screen and (max-width: 768px)
-	    {
-        	.navbar 
-        	{
-            	background: #0066ff;
-                opacity: 1;
-                color:black;
-        	}
-    	}
+                color: white;
+	 }
        .view 
 		{
 		    background: url("img/on.jpeg")center fixed;
@@ -140,22 +126,19 @@ error_reporting(0);
     <!-- Start your project here-->
 
     <header>
-    	<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-    		<button class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#togg"> <span class="fa fa-bars"> </span> </button>
+    	<nav class="navbar navbar-dark ">
     		<div class="container">
-    			<div class="collapse navbar-toggleable-xs" id="togg">
     				<a class="navbar-brand" href="index.php" style=" font-size:150%"> Contest Finder </a>
     				<ul class="nav navbar-nav" >
     					<li class="nav-item">
                             <a class="nav-link" href="up.php"style="font-size:120%"> Upcoming Contests  </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="on.php"style="font-size:120%"active> Ongoing Contests </a>
+                            <a class="nav-link" href="on.php"style="font-size:120%"active> Live Contests </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.php" style="font-size:120%"> About Me </a>
     				</ul>
-    			</div>
     		</div>
     	</nav>
         
@@ -163,19 +146,18 @@ error_reporting(0);
    
     <div class="view hm-black-slight">
         <div class="full-bg-img flex-center">
-	            <h1 class="animated fadeInUp display-1" style="color:white;"> Running Contests </h1>
+	            <h1 class="display-1" style="color:white;"> Running Contests </h1>
 	    	</div>
     </div>
-    <div style="background-color: #fff;">
-        <div style="color:#fff; margin-bottom:20px;">ghjkl</div>
     <?php
         $i=0;
         for(;$i<count($obj['result']['ongoing']);$i++)
         {
             if(mtime($obj['result']['ongoing'][$i]['EndTime'])>=mtime($obj['result']['timestamp']))
             {   
-                 echo "<a href='{$obj['result'][ 'ongoing'][$i]['url']}' target='_blank' ><div class='entry'>
-                        <div class='row'>
+                 echo "<div class='entry'>
+                        <a href='{$obj['result'][ 'ongoing'][$i]['url']}' target='_blank' >
+                        <div class='row' style='color:#000;'>
                             <div class='col-md-4'>
                             <p >";
                 image($obj['result']['ongoing'][$i]['Platform']);
@@ -205,9 +187,9 @@ error_reporting(0);
         }
     ?>
     </div>
-    <div >
+ <!--   <div >
         <div style="color:#000000; margin-bottom:10px;  margin-top:10px; text-align:center; font-size:20px;"><p>&copy; DragonFist</p></div>
-    </div>
+    </div> -->
 
 
 </body>
